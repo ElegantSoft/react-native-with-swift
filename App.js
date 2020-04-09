@@ -24,6 +24,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const App = () => {
   const Toast = NativeModules.Taost;
+  const ToastObjc = NativeModules.ToastManager;
   console.log(Toast);
   return (
     <>
@@ -41,8 +42,13 @@ const App = () => {
         <Image source={require('./tower.png')} style={styles.tower} />
         <Button
           color="#fff"
-          title="toast"
+          title="Swift"
           onPress={() => Toast.show('السلام عليكم')}
+        />
+        <Button
+          color="#fff"
+          title="Objective-C"
+          onPress={() => ToastObjc.show('السلام عليكم', 1)}
         />
       </LinearGradient>
     </>
